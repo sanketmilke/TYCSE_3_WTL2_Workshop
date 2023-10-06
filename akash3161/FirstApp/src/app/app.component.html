@@ -1,0 +1,30 @@
+<div class="main">
+   <div class="toolbar">
+    <span><h1>Welcome</h1></span>
+   </div>
+
+    Name of Project: <font [color]="mycolor">{{projectTitle}}</font><br>
+    <input type="text" [(ngModel)]="name">{{name}}<br>
+    <button :[disabled]="status">Click Me</button><br>
+    <button :(click)=showData()>Click Me</button><br>
+    <app-detail>book app</app-detail>
+</div>
+<div>
+    <select>
+        <option *ngFor="let Books of Books">
+            {{Books.BookName}}
+        </option>
+    </select>
+</div>
+<app-form-handling>New Component</app-form-handling>
+ <app-add-book></app-add-book>
+<app-delete-book></app-delete-book>
+
+Book options:
+<ul>
+    <li><a routerLink="/add-book">Add Book</a></li>
+    <li><a routerLink="/delete-book">Delete Book</a></li>
+</ul>
+
+Components Loading...
+   <router-outlet></router-outlet>
